@@ -1,20 +1,31 @@
 
 package com.mycompany.concesionaria.logic;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Luis Zenteno
  */
-public class Automovil {
+
+@Entity
+public class Automovil implements Serializable {
     
-    int id;
-    String marca;
-    String modelo;
-    String patente;
-    String color;
-    String motor;
-    int cantPuertas;
-    int anioFabricacion;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
+    
+    private String marca;
+    private String modelo;
+    private String patente;
+    private String color;
+    private String motor;
+    private int cantPuertas;
+    private int anioFabricacion;
 
     public Automovil() {
     }
